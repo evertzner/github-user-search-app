@@ -1,0 +1,22 @@
+---
+import IconCompany from '../icons/IconCompany.astro';
+import IconLocation from '../icons/IconLocation.astro';
+import IconTwitter from '../icons/IconTwitter.astro';
+import IconWebsite from '../icons/IconWebsite.astro';
+import Social from './Social.astro';
+---
+
+<div>
+  <Social value='San Francisco'>
+    <IconLocation />
+  </Social>
+  <Social value='https://github.blog'>
+    <IconWebsite />
+  </Social>
+  <Social value=''>
+    <IconTwitter />
+  </Social>
+  <Social value='@github'>
+    <IconCompany />
+  </Social>
+</div>
