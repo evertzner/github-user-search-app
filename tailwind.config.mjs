@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         primary: '#0079FF',
+        'primary-hover': '#60ABFF',
         light: {
           gray: '#697C9A',
           stone: '#4B6A9B',

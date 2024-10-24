@@ -3,8 +3,14 @@ import IconSearch from '../icons/IconSearch.astro';
 import Button from './Button.astro';
 ---
 
-<div>
+<div
+  class='flex items-center gap-2 self-stretch rounded-2xl bg-light-white py-2 pl-4 pr-2 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)]'
+>
   <IconSearch />
-  <input type='text' placeholder='Searcg GitHub username...' />
+  <input
+    type='text'
+    class='flex-1 text-xs leading-[25px] text-light-black placeholder:text-light-stone'
+    placeholder='Search GitHub username...'
+  />
   <Button />
 </div>

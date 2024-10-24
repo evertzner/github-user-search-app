@@ -7,7 +7,7 @@ interface Props {
 const { title, value } = Astro.props;
 ---
 
-<div>
-  <div>{title}</div>
-  <div>{value}</div>
+<div class='flex flex-1 flex-col items-center justify-center gap-2'>
+  <div class='self-stretch text-center text-[11px] leading-[normal] text-light-stone'>{title}</div>
+  <div class='self-stretch text-center font-bold leading-[normal] text-light-black'>{value}</div>
 </div>

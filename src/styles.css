@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  button,
+  input {
+    @apply focus:outline-none;
+  }
+}
+
 body {
   font-family: 'Space Mono', monospace;
 }

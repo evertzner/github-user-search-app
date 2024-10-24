@@ -6,7 +6,9 @@ interface Props {
 const { value } = Astro.props;
 ---
 
-<div class={`text-light-stone ${value ? 'opacity-100' : 'opacity-50'}`}>
+<div
+  class={`text-light-stone flex items-center gap-3 self-stretch ${value ? 'opacity-100' : 'opacity-50'}`}
+>
   <slot />
-  <div>{value || 'Not Available'}</div>
+  <div class='text-[13px] leading-[normal]'>{value || 'Not Available'}</div>
 </div>
