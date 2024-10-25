@@ -1,12 +1,14 @@
-<div class='flex flex-col items-start gap-8 self-stretch md:gap-6'>
+<div class='flex flex-col items-start gap-8 self-stretch md:gap-6 2xl:gap-5'>
   <div class='flex items-center gap-5 self-stretch md:gap-10'>
     <img
       src='/delete-this.png'
       alt='profile-picture'
-      class='h-[70px] w-[70px] rounded-full md:h-[117px] md:w-[117px]'
+      class='flex h-[70px] w-[70px] rounded-full md:h-[117px] md:w-[117px] 2xl:hidden'
     />
-    <div class='flex flex-1 flex-col items-start justify-center gap-1.5 md:gap-1'>
-      <div class='flex flex-col items-start self-stretch'>
+    <div
+      class='flex flex-1 flex-col items-start justify-center gap-1.5 md:gap-1 2xl:flex-row 2xl:gap-2 2xl:self-stretch'
+    >
+      <div class='flex flex-col items-start self-stretch 2xl:flex-1'>
         <div
           class='self-stretch text-base font-bold leading-[normal] text-light-black md:text-[26px]'
         >
@@ -16,7 +18,9 @@
           @octocat
         </div>
       </div>
-      <div class='self-stretch text-[13px] leading-[normal] text-light-stone md:text-[15px]'>
+      <div
+        class='self-stretch text-[13px] leading-[normal] text-light-stone md:text-[15px] 2xl:py-2'
+      >
         Joined 25 Jan 2011
       </div>
     </div>
