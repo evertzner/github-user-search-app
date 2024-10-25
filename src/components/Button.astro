@@ -1,4 +1,14 @@
 <button
-  class='flex items-center justify-center gap-2.5 rounded-[10px] bg-primary px-4 py-3 text-sm font-bold leading-[normal] text-light-white transition-all hover:bg-primary-hover'
+  id='search'
+  class='flex items-center justify-center gap-2.5 rounded-[10px] bg-primary px-4 py-3 text-sm font-bold leading-[normal] text-light-white transition-all hover:bg-primary-hover md:px-6 md:text-base'
   >Search</button
 >
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('#search')!;
+    button.addEventListener('click', () => {
+      console.log('Button clicked!');
+    });
+  });
+</script>

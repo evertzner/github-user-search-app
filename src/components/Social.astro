@@ -1,14 +1,15 @@
 ---
 interface Props {
   value?: string;
+  gridPosition: string;
 }
 
-const { value } = Astro.props;
+const { value, gridPosition } = Astro.props;
 ---
 
 <div
-  class={`text-light-stone flex items-center gap-3 self-stretch ${value ? 'opacity-100' : 'opacity-50'}`}
+  class={`text-light-stone flex items-center gap-3 md:gap-4 self-stretch ${gridPosition} ${value ? 'opacity-100' : 'opacity-50'}`}
 >
   <slot />
-  <div class='text-[13px] leading-[normal]'>{value || 'Not Available'}</div>
+  <div class='text-[13px] leading-[normal] md:text-[15px]'>{value || 'Not Available'}</div>
 </div>

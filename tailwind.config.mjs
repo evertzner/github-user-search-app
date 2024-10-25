@@ -21,6 +21,10 @@ export default {
           black: '#141D2F',
           white: '#FFFFFF'
         }
+      },
+      spacing: {
+        35: '8.75rem',
+        59: '14.75rem'
       }
     }
   },

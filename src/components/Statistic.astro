@@ -8,6 +8,14 @@ const { title, value } = Astro.props;
 ---
 
 <div class='flex flex-1 flex-col items-center justify-center gap-2'>
-  <div class='self-stretch text-center text-[11px] leading-[normal] text-light-stone'>{title}</div>
-  <div class='self-stretch text-center font-bold leading-[normal] text-light-black'>{value}</div>
+  <div
+    class='self-stretch text-center text-[11px] leading-[normal] text-light-stone md:text-start md:text-[13px]'
+  >
+    {title}
+  </div>
+  <div
+    class='self-stretch text-center text-base font-bold leading-[normal] text-light-black md:text-start md:text-[22px]'
+  >
+    {value}
+  </div>
 </div>
