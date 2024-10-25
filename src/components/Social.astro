@@ -1,15 +1,30 @@
 ---
+import type { string } from 'astro:schema';
+
 interface Props {
   value?: string;
   gridPosition: string;
+  to?: string;
 }
 
-const { value, gridPosition } = Astro.props;
+const { value, gridPosition, to } = Astro.props;
 ---
 
 <div
   class={`text-light-stone flex items-center gap-3 md:gap-4 self-stretch ${gridPosition} ${value ? 'opacity-100' : 'opacity-50'}`}
 >
   <slot />
-  <div class='text-[13px] leading-[normal] md:text-[15px]'>{value || 'Not Available'}</div>
+  {
+    to ? (
+      <a
+        href={to}
+        target='_blank'
+        class='text-[13px] leading-[normal] hover:underline md:text-[15px]'
+      >
+        {value}
+      </a>
+    ) : (
+      <div class='text-[13px] leading-[normal] md:text-[15px]'>{value || 'Not Available'}</div>
+    )
+  }
 </div>
