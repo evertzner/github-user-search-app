@@ -4,13 +4,17 @@ import Button from './Button.astro';
 ---
 
 <div
-  class='flex items-center gap-2 self-stretch rounded-2xl bg-light-white py-2 pl-4 pr-2 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] md:gap-6 md:p-8 md:py-2.5 md:pr-2.5'
+  class='relative flex items-center gap-2 self-stretch rounded-2xl bg-light-white py-2 pl-4 pr-2 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] md:gap-6 md:p-8 md:py-2.5 md:pr-2.5'
 >
   <IconSearch />
   <input
+    id='usernameValue'
     type='text'
     class='flex-1 text-xs leading-[25px] text-light-black caret-primary placeholder:text-light-stone md:text-lg'
     placeholder='Search GitHub username...'
   />
   <Button />
+  <span id='error' class='absolute right-35 hidden text-lg leading-[25px] text-error'>
+    No results
+  </span>
 </div>

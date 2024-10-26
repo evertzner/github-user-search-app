@@ -7,13 +7,18 @@ interface Props {
 const { title, value } = Astro.props;
 ---
 
-<div class='flex flex-1 flex-col items-center justify-center gap-2 2xl:gap-0'>
+<div
+  class='flex flex-1 flex-col items-center justify-center gap-2 2xl:gap-0'
+  data-statistic-title={title}
+>
   <div
     class='self-stretch text-center text-[11px] leading-[normal] text-light-stone md:text-start md:text-[13px]'
   >
     {title}
   </div>
   <div
+    data-statistic={title}
+    id='statisticValue'
     class='self-stretch text-center text-base font-bold leading-[normal] text-light-black md:text-start md:text-[22px]'
   >
     {value}

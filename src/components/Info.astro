@@ -1,7 +1,8 @@
 <div class='flex flex-col items-start gap-8 self-stretch md:gap-6 2xl:gap-5'>
   <div class='flex items-center gap-5 self-stretch md:gap-10'>
     <img
-      src='/delete-this.png'
+      id='avatar_img'
+      src='https://avatars.githubusercontent.com/u/9919?v=4'
       alt='profile-picture'
       class='flex h-[70px] w-[70px] rounded-full md:h-[117px] md:w-[117px] 2xl:hidden'
     />
@@ -10,25 +11,30 @@
     >
       <div class='flex flex-col items-start self-stretch 2xl:flex-1'>
         <div
+          id='name'
           class='self-stretch text-base font-bold leading-[normal] text-light-black md:text-[26px]'
         >
-          The Octocat
+          GitHub
         </div>
-        <div class='self-stretch text-[13px] leading-[normal] text-primary md:text-base'>
-          @octocat
+        <div
+          class='self-stretch text-[13px] leading-[normal] text-primary md:text-base'
+          id='userName'
+        >
+          @github
         </div>
       </div>
       <div
         class='self-stretch text-[13px] leading-[normal] text-light-stone md:text-[15px] 2xl:py-2'
+        id='joined'
       >
-        Joined 25 Jan 2011
+        Joined 29 Jan 2008
       </div>
     </div>
   </div>
   <p
-    class='flex flex-1 items-center justify-center gap-2.5 self-stretch text-[13px] leading-[25px] text-light-stone md:text-[15px]'
+    id='bio'
+    class='flex-1 items-center justify-center gap-2.5 self-stretch text-left text-[13px] leading-[25px] text-light-stone md:text-[15px]'
   >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
-    eros.
+    How people build software.
   </p>
 </div>

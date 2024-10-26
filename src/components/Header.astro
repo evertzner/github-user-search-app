@@ -3,7 +3,7 @@ import IconMoon from '../icons/IconMoon.astro';
 ---
 
 <header class='flex items-center justify-between self-stretch'>
-  <div class='text-[26px] font-bold leading-[normal] text-light-black'>devfinder</div>
+  <a class='text-[26px] font-bold leading-[normal] text-light-black' href='/'>devfinder</a>
   <button
     id='toggle'
     class='flex-start flex cursor-pointer gap-4 text-light-stone hover:text-light-black'
@@ -12,12 +12,3 @@ import IconMoon from '../icons/IconMoon.astro';
     <IconMoon />
   </button>
 </header>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('#toggle')!;
-    button.addEventListener('click', () => {
-      console.log('Button is clicked!');
-    });
-  });
-</script>

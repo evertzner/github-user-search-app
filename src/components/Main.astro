@@ -3,7 +3,89 @@ import Search from './Search.astro';
 import UserCard from './UserCard.astro';
 ---
 
-<main class='flex flex-col items-start gap-4 self-stretch md:gap-6'>
+<main
+  class='flex flex-col items-start gap-4 self-stretch md:gap-6'
+  data-user={{ data: 'asd', name: 'pepe' }}
+>
   <Search />
   <UserCard />
 </main>
+
+<script>
+  async function getUserInfo() {
+    const username: HTMLInputElement = document.querySelector('#usernameValue')!;
+
+    if (!username.value) {
+      alert('Please enter a GitHub username!');
+      return;
+    }
+
+    const url = `https://api.github.com/users/${username.value}`;
+
+    try {
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        if (response.statusText === 'rate limit exceeded') {
+          throw new Error('Rate limit exceeded');
+        }
+
+        if (document.documentElement.clientWidth >= 1440) {
+          document.querySelector('#error')!.classList.add('2xl:flex');
+          return;
+        } else {
+          throw new Error('User not found');
+        }
+      }
+
+      document.querySelector('#error')!.classList.remove('2xl:flex');
+
+      const {
+        login,
+        avatar_url,
+        name,
+        created_at,
+        bio,
+        public_repos,
+        followers,
+        following,
+        location,
+        twitter_username,
+        blog,
+        company
+      } = await response.json();
+
+      document.querySelector('#name')!.textContent = name;
+      document.querySelector('#userName')!.textContent = login;
+      document.querySelector('#avatar_img')!.setAttribute('src', avatar_url);
+      document.querySelector('#avatar_img_desktop')!.setAttribute('src', avatar_url);
+      document.querySelector('#joined')!.textContent = `Joined ${new Date(
+        created_at
+      ).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`;
+      document.querySelector('#bio')!.textContent = bio;
+      document.querySelector('[data-statistic="Repos"]')!.textContent = public_repos;
+      document.querySelector('[data-statistic="Followers"]')!.textContent = followers;
+      document.querySelector('[data-statistic="Following"]')!.textContent = following;
+      document.querySelector('[data-social="Location"]')!.textContent = location || 'Not Available';
+      document.querySelector('[data-social="Twitter"]')!.textContent =
+        twitter_username || 'Not Available';
+      document.querySelector('[data-social="Website"]')!.textContent = blog || 'Not Available';
+      document.querySelector('[data-social="Company"]')!.textContent = company || 'Not Available';
+      document.querySelector('[data-social="Website"]')!.setAttribute('href', blog || '#');
+      document.getElementById('Website')!.dataset.value = blog || 'NA';
+      document.getElementById('Twitter')!.dataset.value = twitter_username || 'NA';
+      document.getElementById('Location')!.dataset.value = location || 'NA';
+      document.getElementById('Company')!.dataset.value = company || 'NA';
+    } catch (error: any) {
+      alert(error.message);
+    }
+  }
+
+  const buttonSearch = document.querySelector('#search')!;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    buttonSearch.addEventListener('click', () => {
+      getUserInfo();
+    });
+  });
+</script>

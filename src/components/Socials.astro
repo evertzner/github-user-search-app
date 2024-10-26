@@ -12,6 +12,7 @@ import Social from './Social.astro';
   <Social
     value='San Francisco'
     gridPosition='md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2'
+    title='Location'
   >
     <IconLocation />
   </Social>
@@ -19,13 +20,22 @@ import Social from './Social.astro';
     value='https://github.blog'
     to='https://github.blog'
     gridPosition='md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3'
+    title='Website'
   >
     <IconWebsite />
   </Social>
-  <Social value='' gridPosition='md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2'>
+  <Social
+    value='github'
+    gridPosition='md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2'
+    title='Twitter'
+  >
     <IconTwitter />
   </Social>
-  <Social value='@github' gridPosition='md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3'>
+  <Social
+    title='Company'
+    value='@github'
+    gridPosition='md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3'
+  >
     <IconCompany />
   </Social>
 </div>
