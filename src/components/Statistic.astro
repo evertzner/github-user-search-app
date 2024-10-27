@@ -12,14 +12,14 @@ const { title, value } = Astro.props;
   data-statistic-title={title}
 >
   <div
-    class='self-stretch text-center text-[11px] leading-[normal] text-light-stone md:text-start md:text-[13px]'
+    class='self-stretch text-center text-[11px] leading-[normal] text-light-stone md:text-start md:text-[13px] dark:text-dark-white'
   >
     {title}
   </div>
   <div
     data-statistic={title}
     id='statisticValue'
-    class='self-stretch text-center text-base font-bold leading-[normal] text-light-black md:text-start md:text-[22px]'
+    class='self-stretch text-center text-base font-bold leading-[normal] text-light-black md:text-start md:text-[22px] dark:text-dark-white'
   >
     {value}
   </div>

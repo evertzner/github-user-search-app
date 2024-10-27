@@ -4,13 +4,13 @@ import Button from './Button.astro';
 ---
 
 <div
-  class='relative flex items-center gap-2 self-stretch rounded-2xl bg-light-white py-2 pl-4 pr-2 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] md:gap-6 md:p-8 md:py-2.5 md:pr-2.5'
+  class='relative flex items-center gap-2 self-stretch rounded-2xl bg-light-white py-2 pl-4 pr-2 shadow-[0px_16px_30px_-10px_rgba(70,96,187,0.20)] md:gap-6 md:p-8 md:py-2.5 md:pr-2.5 dark:bg-dark-stone dark:shadow-none'
 >
   <IconSearch />
   <input
     id='usernameValue'
     type='text'
-    class='flex-1 text-xs leading-[25px] text-light-black caret-primary placeholder:text-light-stone md:text-lg'
+    class='flex-1 bg-transparent text-xs leading-[25px] text-light-black caret-primary placeholder:text-light-stone autofill:bg-light-white md:text-lg dark:text-dark-white dark:placeholder:text-dark-white dark:autofill:bg-dark-stone'
     placeholder='Search GitHub username...'
   />
   <Button />

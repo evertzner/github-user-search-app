@@ -24,8 +24,22 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class='flex flex-col items-start gap-9 bg-light-silver px-6 py-8 md:px-24 md:pb-59 md:pt-35 2xl:px-89 2xl:pb-42 2xl:pt-36'
+    class='flex flex-col items-start gap-9 bg-light-silver px-6 py-8 md:px-24 md:pb-59 md:pt-35 2xl:px-89 2xl:pb-42 2xl:pt-36 dark:bg-dark-black'
   >
     <slot />
   </body>
 </html>
+
+<script>
+  document.documentElement.classList.toggle(
+    'dark',
+    localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  );
+
+  document.getElementById('theme')!.textContent = localStorage.theme === 'dark' ? 'LIGHT' : 'DARK';
+  document.getElementById('iconSun')!.style.display =
+    localStorage.theme === 'dark' ? 'block' : 'none';
+  document.getElementById('iconMoon')!.style.display =
+    localStorage.theme === 'dark' ? 'none' : 'block';
+</script>

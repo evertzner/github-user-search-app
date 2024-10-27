@@ -1,14 +1,39 @@
 ---
 import IconMoon from '../icons/IconMoon.astro';
+import IconSun from '../icons/IconSun.astro';
 ---
 
 <header class='flex items-center justify-between self-stretch'>
-  <a class='text-[26px] font-bold leading-[normal] text-light-black' href='/'>devfinder</a>
+  <a class='text-[26px] font-bold leading-[normal] text-light-black dark:text-dark-white' href='/'
+    >devfinder</a
+  >
   <button
     id='toggle'
-    class='flex-start flex cursor-pointer gap-4 text-light-stone hover:text-light-black'
+    class='flex-start flex cursor-pointer gap-4 text-light-stone hover:text-light-black dark:text-dark-white dark:hover:text-dark-gray'
   >
-    <div class='text-right text-[13px] font-bold leading-[normal] tracking-[2.5px]'>DARK</div>
+    <div class='text-right text-[13px] font-bold leading-[normal] tracking-[2.5px]' id='theme'>
+      DARK
+    </div>
     <IconMoon />
+    <IconSun />
   </button>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('toggle')!.addEventListener('click', () => {
+      const html = document.getElementsByTagName('html')[0]!;
+      const isDark = html.classList.contains('dark');
+      html.classList.toggle('dark', !isDark);
+
+      localStorage.theme = isDark ? 'light' : 'dark';
+      document.getElementById('theme')!.textContent =
+        localStorage.theme === 'dark' ? 'LIGHT' : 'DARK';
+
+      document.getElementById('iconSun')!.style.display =
+        localStorage.theme === 'dark' ? 'block' : 'none';
+      document.getElementById('iconMoon')!.style.display =
+        localStorage.theme === 'dark' ? 'none' : 'block';
+    });
+  });
+</script>

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'selector',
   theme: {
     extend: {
       screens: {
@@ -20,7 +21,8 @@ export default {
         dark: {
           stone: '#1E2A47',
           black: '#141D2F',
-          white: '#FFFFFF'
+          white: '#FFFFFF',
+          gray: '#90A4D4'
         }
       },
       spacing: {
